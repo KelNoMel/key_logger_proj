@@ -1,3 +1,7 @@
+### BIGNOTE ###
+You might need to make an exception to this folder for your security software. The lower level python
+scripts contain key words which are likely to be picked up by their filters.
+
 This explains how to use the chatroom and extension keylogger implementations
 
 ### CHATROOM ###
@@ -38,6 +42,9 @@ Click the developer mode switch on the top right and click 'load unpacked' on th
 Select the extension folder in this repo to unpack.
 Run the flask server using: python3 extensiontracker.py
 Go onto a few sites and start typing, you can see the flask server log your inputs.
+
+If you want to use the easy button, it's best to pin the extension. When you click it, click the
+button image to announce "that was easy"
 
 HOW IT WORKS
 The keylogger is contained in the extension itself (content.js). When the extension logs this data, 
