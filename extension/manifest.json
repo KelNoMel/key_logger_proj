@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Easy Button",
+    "description": "Just a joke extension, nothing else to see here",
+    "version": "1.0",
+    "icons": {
+      "16": "easy.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "js": ["content.js"],
+        "matches": ["*://*/*"]
+      }
+    ]
+  }
